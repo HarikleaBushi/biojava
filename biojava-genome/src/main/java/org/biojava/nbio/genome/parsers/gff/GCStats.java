@@ -32,7 +32,7 @@ public class GCStats {
 
 	public static double getGCStats(Collection<DNASequence> sequences) {
 		double gcCount = 0;
-		double total = 0;
+		double total;
 
 		for (DNASequence sequence : sequences) {
 			char[] dna = sequence.toString().toCharArray();
