@@ -180,14 +180,14 @@ public class CommandPrompt {
 		LinkedHashMap<String, ProteinSequence> ret;
 		if ( inputLocation.toLowerCase().contains(".gb")) {
 			GenbankReader<ProteinSequence, AminoAcidCompound> genbankReader = new GenbankReader<ProteinSequence, AminoAcidCompound>(
-					inStream, new GenericGenbankHeaderParser<ProteinSequence, AminoAcidCompound>(),
+					inStream, new GenericGenbankHeaderParser<>(),
 					new ProteinSequenceCreator(set));
 			ret = genbankReader.process();
 
 
 		} else {
 			FastaReader<ProteinSequence, AminoAcidCompound> fastaReader = new FastaReader<ProteinSequence, AminoAcidCompound>(
-					inStream, new GenericFastaHeaderParser<ProteinSequence, AminoAcidCompound>(),
+					inStream, new GenericFastaHeaderParser<>(),
 					new ProteinSequenceCreator(set));
 			ret = fastaReader.process();
 
